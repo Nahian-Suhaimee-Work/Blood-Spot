@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Result
+{% endblock %}
+{% block main %}
+    <!-- Table -->
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+        </tr>
+
+        </thead>
+
+        <tbody>
+        {% for x in result %}
+        <tr>
+            <td>{{ x["name"] }}</td>
+            <td>{{ x["phone"] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

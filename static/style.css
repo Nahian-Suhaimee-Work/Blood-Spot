@@ -1,0 +1,63 @@
+/*Top margin*/
+.main {
+    margin-top: 1rem;
+}
+/*Main heading*/
+.heading1 {
+    margin: 1rem;
+    text-align: center;
+}
+/*Main hyperlink*/
+.hyperlink1 {
+    text-decoration: none;
+}
+.hyperlink1:hover {
+    text-decoration: underline;
+}
+/*Main button*/
+.mainbutton {
+    margin-bottom: 1rem;
+}
+/*Form style*/
+.form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+/*Responsive*/
+@media (max-width: 767px) {
+    .form {
+        display: initial;
+    }
+    .form-text {
+        font-size: 0.825em;
+    }
+}
+/*Success & Error*/
+.success {
+    background-color: green;
+    color: white;
+}
+.error {
+    background-color: red;
+    color: white;
+}
+/*Checkbox*/
+.checkbox {
+    margin-bottom: 1rem;
+}
+/*Info*/
+.info {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: left;
+}
+.infocontainer{
+    display: inline-block;
+}
+.infosymbol {
+    font-size: 3rem;
+    margin: 1rem 0rem 1rem 0rem;
+}

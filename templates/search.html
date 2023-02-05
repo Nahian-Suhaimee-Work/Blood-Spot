@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Doners
+{% endblock %}
+{% block main %}
+    <h4 class="heading1">Blood Doners <i class="bi bi-geo-alt"></i> around me</h4>
+    <div class="form-floating form">
+        <form action="/search" method="post">
+            <!-- alerts -->
+            <h5 class="error">{{ error }}</h5>
+
+            <!-- blood type -->
+            <div class="mb-3">
+                <select class="form-select" aria-label="Default select example" autocomplete="off" name="bgroup" required>
+                    <option value="">Choose Blood Type</option>
+                    {% for x in BGROUP %}
+                        <option value="{{ x }}"> {{ x }}
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- Zone -->
+            <div class="mb-3">
+                <select class="form-select" aria-label="Default select example" autocomplete="off" name="zone" required>
+                    <option value="">Choose Your Zone</option>
+                    {% for x in ZONE %}
+                        <option value="{{ x }}"> {{ x }}
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary mainbutton">Search<i class="bi bi-search"></i></button>
+        </form>
+    </div>
+
+    <a href="/" class="hyperlink1">Want to donate Blood?</a>
+{% endblock %}

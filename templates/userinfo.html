@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Result
+{% endblock %}
+{% block main %}
+    <div class="infocontainer">
+        <h4 class="infosymbol"><i class="bi bi-person-vcard"></i></h4>
+        {% for x in info %}
+            <h4 class="info"> Name: {{ x["name"] }} </h4>
+            <h4 class="info"> E-mail: {{ x["email"] }} </h4>
+            <h4 class="info"> Phone: {{ x["phone"] }} </h4>
+            <h4 class="info"> Blood Group: {{ x["bgroup"] }} </h4>
+            <h4 class="info"> Zone: {{ x["zone"] }} </h4>
+        {% endfor %}
+    </div>
+{% endblock %}

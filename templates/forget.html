@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Forget Password
+{% endblock %}
+{% block main %}
+    <h4 class="heading1">Reset <i class="bi bi-gear"></i> your password</h4>
+    <div class="form-floating form">
+        <form action="/forget" method="post">
+            <!-- alerts -->
+            <h5 class="error">{{ error }}</h5>
+
+            <!--  mail -->
+            <div class="mb-3">
+                <input type="mail" class="form-control" id="exampleInputName1" title= "johndoe@xyzmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" aria-describedby="nameHelp" placeholder="Enter your e-mail" autocomplete="off" name="email" required>
+                <div class="form-text">An email will be sent to this adress with your password. </div>
+            </div>
+
+            <button type="submit" id="submit" class="btn btn-primary mainbutton">Submit<i class="bi bi-check-all"></i></button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete account
+{% endblock %}
+{% block main %}
+    <h4 class="heading1">Delete account <i class="bi bi-person-x"></i></h4>
+    <div class="form-floating form">
+        <form action="/delete" method="post">
+              <div class="form-check checkbox">
+                <input class="form-check-input" type="checkbox" value="1" id="flexCheckChecked" name="check" required>
+                <label class="form-check-label" for="flexCheckChecked">
+                    My account will be deleted, it has been verified.
+                </label>
+              </div>
+            <button type="submit" id="submit" class="btn btn-danger mainbutton">Delete <i class="bi bi-trash3"> </i></button>
+        </form>
+    </div>
+{% endblock %}

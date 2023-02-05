@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Confirm Edit
+{% endblock %}
+{% block main %}
+    <h4 class="heading1">Confirm <i class="bi bi-check"></i> your edit</h4>
+    <div class="form-floating form">
+        <form action="/confirm_edit_delete_account" method="post">
+            <!-- alerts -->
+            <h5 class="error">{{ error }}</h5>
+            <!--  username -->
+            <div class="mb-3">
+            <input type="text" class="form-control" id="exampleInputName1" aria-describedby="nameHelp" placeholder="Enter your name" autocomplete="off" name="name" required>
+            </div>
+
+            <!--  mail -->
+            <div class="mb-3">
+                <input type="mail" class="form-control" id="exampleInputName1" title= "johndoe@xyzmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" aria-describedby="nameHelp" placeholder="Enter your e-mail" autocomplete="off" name="email" required>
+            </div>
+
+            <!-- password -->
+            <div class="mb-3">
+            <input type="password" class="form-control password" id="exampleInputPassword1" pattern="(?=.*\d).{8,}" placeholder="Enter your password" autocomplete="off" name="password" required>
+            <div class="form-text">Must contain at least one number and 8 or more characters.</div>
+            </div>
+
+            <!-- confirm password -->
+            <div class="mb-3">
+            <input type="password" class="form-control confirmpassword" id="exampleInputPassword1" placeholder="Confirm your password" autocomplete="off" name="confirmpassword" required>
+            </div>
+
+            <!-- phone -->
+            <div class="mb-3">
+            <input type="tel" class="form-control" id="exampleInputNumber1" pattern="[0-1]{2}[0-9]{9}" placeholder="Enter your phone number" autocomplete="off" name="phone" minlength=11 maxlength=11 required>
+            <div class="form-text">Example: 01xxxxxxxxx</div>
+            </div>
+
+            <!-- blood type -->
+            <div class="mb-3">
+                <select class="form-select" aria-label="Default select example" autocomplete="off" name="bgroup" required>
+                    <option value="">Choose Blood Type</option>
+                    {% for x in BGROUP %}
+                        <option value="{{ x }}"> {{ x }}
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- Zone -->
+            <div class="mb-3">
+                <select class="form-select" aria-label="Default select example" autocomplete="off" name="zone" required>
+                    <option value="">Choose Your Zone</option>
+                    {% for x in ZONE %}
+                        <option value="{{ x }}"> {{ x }}
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button type="submit" id="submit" class="btn btn-primary mainbutton">Submit<i class="bi bi-check-all"></i></button>
+        </form>
+    </div>
+{% endblock %}
